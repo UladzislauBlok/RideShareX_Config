@@ -1,0 +1,17 @@
+spring:
+  application:
+    name: ride-microservice
+  datasource:
+    username: ${DB_USERNAME_RIDE_MICROSERVICE}
+    url: ${SQL_URI}
+    password: ${DB_PASSWORD_RIDE_MICROSERVICE}
+server:
+  port: 8080
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl: 
+      defaultZone: ${EUREKA_URI}
