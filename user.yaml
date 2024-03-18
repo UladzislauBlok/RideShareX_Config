@@ -1,6 +1,10 @@
 spring:
   application:
     name: user-microservice
+  datasource:
+    username: ${SQL_USERNAME}
+    url: ${SQL_URI}
+    password: ${SQL_PASSWORD}
 server:
   port: 8080
 eureka:
