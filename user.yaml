@@ -5,6 +5,14 @@ spring:
     username: ${DB_USERNAME_USER_MICROSERVICE}
     url: ${SQL_URI}
     password: ${DB_PASSWORD_USER_MICROSERVICE}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties.hibernate:
+      batch_size: 50
+      fetch_size: 50
+      show_sql: true
+      format_sql: true
+      hbm2ddl.auto: validate
 server:
   port: 8080
 eureka:
