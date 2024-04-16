@@ -6,6 +6,10 @@ spring:
     url: ${SQL_URI}
     password: ${DB_PASSWORD_AUTH_MICROSERVICE}
     driver-class-name: org.postgresql.Driver
+jwt:
+  secret:
+    jwe: ${JWE_SECRET_KEY}
+    jws: ${JWS_SECRET_KEY}
 server:
   port: 8080
 eureka:
