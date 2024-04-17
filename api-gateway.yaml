@@ -12,6 +12,13 @@ spring:
               - POST
               - PATCH
               - DELETE
+      routes:
+        - id: AUTH-SERVICE
+          uri: lb://auth/
+          predicates:
+            - Path=/api/v1/auth/**
+          filters:
+            - RewritePath=/api/v1/auth/(?<path>.*), /api/$\{path}
 server:
   port: 8080
 eureka:
