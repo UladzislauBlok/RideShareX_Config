@@ -2,9 +2,9 @@ spring:
   application:
     name: auth-microservice
   datasource:
-    username: ${DB_USERNAME_AUTH_MICROSERVICE}
+    username: ${DB_AUTH_USERNAME}
     url: ${SQL_URI}
-    password: ${DB_PASSWORD_AUTH_MICROSERVICE}
+    password: ${DB_AUTH_PASSWORD}
     driver-class-name: org.postgresql.Driver
 jwt:
   secret:

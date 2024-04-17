@@ -1,6 +1,11 @@
 spring:
   application:
     name: api-gateway
+  datasource:
+    username: ${DB_AUTH_USERNAME}
+    url: ${SQL_URI}
+    password: ${DB_AUTH_PASSWORD}
+    driver-class-name: org.postgresql.Driver
   cloud:
     gateway:
       globalcors:
@@ -14,7 +19,7 @@ spring:
               - DELETE
       routes:
         - id: AUTH-SERVICE
-          uri: lb://auth/
+          uri: lb://AUTH-MICROSERVICE/
           predicates:
             - Path=/api/v1/auth/**
           filters:
