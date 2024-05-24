@@ -15,6 +15,13 @@ spring:
       hbm2ddl.auto: validate
 server:
   port: 8080
+kafka:
+  bootstrap-servers: ${KAFKA_URI}
+  topics:
+    user-topic:
+      consumer-group-id: user-microservice
+      consumer-thread-num: 3
+      name: user-message-topic
 eureka:
   instance:
     preferIpAddress: true

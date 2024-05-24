@@ -12,6 +12,13 @@ jwt:
     jws: ${JWS_SECRET_KEY}
 server:
   port: 8080
+kafka:
+  bootstrap-servers: ${KAFKA_URI}
+  topics:
+    user-topic:
+      partitions: 6
+      replicas: 1
+      name: user-message-topic
 eureka:
   instance:
     preferIpAddress: true
