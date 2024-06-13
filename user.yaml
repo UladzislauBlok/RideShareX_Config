@@ -13,6 +13,11 @@ spring:
       show_sql: true
       format_sql: true
       hbm2ddl.auto: validate
+  data:
+    redis:
+      host: ${REDIS_URI}
+      post: ${REDIS_PORT}
+spring.data.redis.host
 server:
   port: 8080
 kafka:
