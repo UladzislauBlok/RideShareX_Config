@@ -17,16 +17,18 @@ spring:
     redis:
       host: ${REDIS_URI}
       post: ${REDIS_PORT}
-spring.data.redis.host
 server:
   port: 8080
 kafka:
   bootstrap-servers: ${KAFKA_URI}
-  topics:
+  consumer:
+    consumer-thread-num: 3
     user-topic:
-      consumer-group-id: user-microservice
-      consumer-thread-num: 3
+      consumer-group-id: user-microservice-user-group
       name: user-message-topic
+    rating-topic:
+      consumer-group-id: user-microservice-rating-group
+      name: rating-message-topic
 eureka:
   instance:
     preferIpAddress: true
