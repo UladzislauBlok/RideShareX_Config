@@ -29,6 +29,9 @@ kafka:
     rating-topic:
       consumer-group-id: user-microservice-rating-group
       name: rating-message-topic
+  producer:
+    image-topic:
+      name: image-message-topic
 eureka:
   instance:
     preferIpAddress: true

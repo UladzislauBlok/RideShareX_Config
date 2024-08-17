@@ -14,11 +14,13 @@ server:
   port: 8080
 kafka:
   bootstrap-servers: ${KAFKA_URI}
-  topics:
+  producer:
     user-topic:
-      partitions: 6
+      partitions: 3
       replicas: 1
       name: user-message-topic
+    image-topic:
+      name: image-message-topic
 eureka:
   instance:
     preferIpAddress: true

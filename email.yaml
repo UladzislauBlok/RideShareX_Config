@@ -1,0 +1,31 @@
+spring:
+  application:
+    name: email-microservice
+  mail:
+    host: ${EMAIL_HOST}
+    port: ${EMAIL_PORT}
+    username: ${EMAIL_USERNAME}
+    password: ${EMAIL_PASSWORD}
+    properties:
+      mail:
+        smtp:
+          auth: true
+          starttls:
+            enable: true
+server:
+  port: 8080
+kafka:
+  bootstrap-servers: ${KAFKA_URI}
+  consumer:
+    consumer-thread-num: 3
+    trip-topic:
+      consumer-group-id: email-microservice-group
+      name: trip-message-topic
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl: 
+      defaultZone: ${EUREKA_URI}

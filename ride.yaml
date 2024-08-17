@@ -7,6 +7,17 @@ spring:
     password: ${DB_PASSWORD_RIDE_MICROSERVICE}
 server:
   port: 8080
+kafka:
+  bootstrap-servers: ${KAFKA_URI}
+  producer:
+    rating-topic:
+      partitions: 3
+      replicas: 1
+      name: rating-message-topic
+    trip-topic:
+      partitions: 3
+      replicas: 1
+      name: trip-message-topic
 eureka:
   instance:
     preferIpAddress: true

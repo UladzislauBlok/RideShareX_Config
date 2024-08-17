@@ -1,0 +1,22 @@
+spring:
+  application:
+    name: image-microservice
+server:
+  port: 8080
+kafka:
+  bootstrap-servers: ${KAFKA_URI}
+  consumer:
+    consumer-thread-num: 3
+    image-topic:
+      consumer-group-id: image-microservice-group
+      name: image-message-topic
+      partitions: 3
+      replicas: 1
+eureka:
+  instance:
+    preferIpAddress: true
+  client:
+    registerWithEureka: true
+    fetchRegistry: true
+    serviceUrl: 
+      defaultZone: ${EUREKA_URI}
