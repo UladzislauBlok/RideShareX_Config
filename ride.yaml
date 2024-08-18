@@ -5,6 +5,18 @@ spring:
     username: ${DB_USERNAME_RIDE_MICROSERVICE}
     url: ${SQL_URI}
     password: ${DB_PASSWORD_RIDE_MICROSERVICE}
+    driver-class-name: org.postgresql.Driver
+  jpa:
+    properties.hibernate:
+      batch_size: 50
+      fetch_size: 50
+      show_sql: true
+      format_sql: true
+      hbm2ddl.auto: validate
+  data:
+    redis:
+      host: ${REDIS_URI}
+      post: ${REDIS_PORT}
 server:
   port: 8080
 kafka:

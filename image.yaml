@@ -12,6 +12,12 @@ kafka:
       name: image-message-topic
       partitions: 3
       replicas: 1
+aws:
+  access: ${ACCESS_KEY}
+  secret: ${SECRET_KEY}
+  content:
+    bucket: 
+      name: ${BUCKET_NAME}
 eureka:
   instance:
     preferIpAddress: true
