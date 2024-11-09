@@ -35,23 +35,16 @@ spring:
         - id: RIDE-SERVICE
           uri: lb://RIDE-MICROSERVICE/
           predicates:
-            - Path=/api/v1/RIDE/**
+            - Path=/api/v1/ride/**
           filters:
-            - RewritePath=/api/v1/ride/(?<path>.*), /api/v1/$\{path}
-
-        - id: EMAIL-SERVICE
-          uri: lb://EMAIL-MICROSERVICE/
-          predicates:
-            - Path=/api/v1/EMAIL/**
-          filters:
-            - RewritePath=/api/v1/email/(?<path>.*), /api/v1/$\{path}
+            - RewritePath=/api/v1/ride/(?<path>.*), /api/v1/ride$\{path}
 
         - id: IMAGE-SERVICE
           uri: lb://IMAGE-MICROSERVICE/
           predicates:
-            - Path=/api/v1/IMAGE/**
+            - Path=/api/v1/image/**
           filters:
-            - RewritePath=/api/v1/image/(?<path>.*), /api/v1/$\{path}
+            - RewritePath=/api/v1/image/(?<path>.*), /api/v1/email$\{path}
 allowed:
   origin: "*"
 jwt:
