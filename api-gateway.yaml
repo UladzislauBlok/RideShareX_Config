@@ -24,6 +24,34 @@ spring:
             - Path=/api/v1/auth/**
           filters:
             - RewritePath=/api/v1/auth/(?<path>.*), /api/v1/$\{path}
+
+        - id: USER-SERVICE
+          uri: lb://USER-MICROSERVICE/
+          predicates:
+            - Path=/api/v1/user/**
+          filters:
+            - RewritePath=/api/v1/user/(?<path>.*), /api/v1/$\{path}
+
+        - id: RIDE-SERVICE
+          uri: lb://RIDE-MICROSERVICE/
+          predicates:
+            - Path=/api/v1/RIDE/**
+          filters:
+            - RewritePath=/api/v1/ride/(?<path>.*), /api/v1/$\{path}
+
+        - id: EMAIL-SERVICE
+          uri: lb://EMAIL-MICROSERVICE/
+          predicates:
+            - Path=/api/v1/EMAIL/**
+          filters:
+            - RewritePath=/api/v1/email/(?<path>.*), /api/v1/$\{path}
+
+        - id: IMAGE-SERVICE
+          uri: lb://IMAGE-MICROSERVICE/
+          predicates:
+            - Path=/api/v1/IMAGE/**
+          filters:
+            - RewritePath=/api/v1/image/(?<path>.*), /api/v1/$\{path}
 allowed:
   origin: "*"
 jwt:
